@@ -2,6 +2,11 @@ FROM ipython/scipystack
 
 MAINTAINER IPython Project <ipython-dev@scipy.org>
 
+#RUN apt-get update -y && \
+#    apt-get install -y python-psycopg2 python3-psycopg2 libpq-dev
+RUN pip2 install --upgrade google-api-python-client
+#&& \pip3 install peewee psycopg2
+
 VOLUME /notebooks
 WORKDIR /notebooks
 
