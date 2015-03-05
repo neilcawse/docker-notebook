@@ -2,12 +2,9 @@ FROM ipython/scipystack
 
 MAINTAINER IPython Project <ipython-dev@scipy.org>
 
-#RUN apt-get update -y && \
-#    apt-get install -y python-psycopg2 python3-psycopg2 libpq-dev
 RUN pip2 install --upgrade google-api-python-client
 RUN pip2 install --upgrade python-gflags
-#&& \pip3 install peewee psycopg2
-ENV PYTHONPATH $SDKROOT/platform/bigquery:$PYTHONPATH
+ENV PYTHONPATH $SDKROOT/platform/bigquery:$PYTHONPATH #not sure if this is necessary
 
 VOLUME /notebooks
 WORKDIR /notebooks
