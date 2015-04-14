@@ -15,7 +15,5 @@ ENV USE_HTTP 0
 
 ADD notebook.sh /
 RUN chmod u+x /notebook.sh
-# Horrible - they completely broke gbq functionality - Ill remove this when they fix
-ADD gbq2.py /usr/local/lib/python2.7/dist-packages/pandas/io/gbq.py
 
 CMD ["/notebook.sh"]

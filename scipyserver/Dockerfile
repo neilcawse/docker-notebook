@@ -16,6 +16,8 @@ ENV PEM_FILE /key.pem
 # $PASSWORD will get `unset` within notebook.sh, turned into an IPython style hash
 ENV PASSWORD Dont make this your default
 ENV USE_HTTP 0
+# Horrible - they completely broke gbq functionality - Ill remove this when they fix
+ADD gbq2.py /usr/local/lib/python2.7/dist-packages/pandas/io/gbq.py
 
 ADD notebook.sh /
 RUN chmod u+x /notebook.sh
